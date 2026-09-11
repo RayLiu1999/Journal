@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+  <style>
+    body { margin: 0; background: #F4EDE0; color: #2B231B; font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #B4552F; } a:hover { color: #2B231B; }
+    .serif { font-family: "Noto Serif TC", "PingFang TC", "Songti TC", serif; }
+    p { margin: 0; }
+  </style>
+</helmet>
+<div style="width: 1440px; height: 900px; background: #F4EDE0; display: flex; overflow: hidden;">
+    <div style="width: 232px; flex-shrink: 0; display: flex; flex-direction: column; gap: 28px; padding: 32px 20px; border-right: 1px solid #E2D7C3; background: #FCF9F3;">
+    <div style="display: flex; flex-direction: column; gap: 2px; padding: 0 10px;">
+      <span class="serif" style="font-size: 20px; font-weight: 700; color: #2B231B;">日記</span>
+      <span style="font-size: 12px; color: #A89A8A;">一天，一頁</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <div style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 10px; background: transparent; color: #7A6C5D;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span style="font-size: 14px; font-weight: 500; color: #2B231B;">月曆</span>
+      </div>
+<div style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 10px; background: #F3E1D3; color: #B4552F;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h13"></path></svg><span style="font-size: 14px; font-weight: 700; color: #B4552F;">時間軸</span>
+      </div>
+<div style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 10px; background: transparent; color: #7A6C5D;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg><span style="font-size: 14px; font-weight: 500; color: #2B231B;">統計</span>
+      </div>
+<div style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 10px; background: transparent; color: #7A6C5D;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path></svg><span style="font-size: 14px; font-weight: 500; color: #2B231B;">設定</span>
+      </div>
+    </div>
+    <div style="flex-grow: 1;"></div>
+    <div style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 10px; background: #B4552F; color: #FFF7EE;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFF7EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 10.5-10.5a2 2 0 0 0-3-3L5 16z"></path><path d="M13 7l3 3"></path></svg><span style="font-size: 14px; font-weight: 700;">寫今天的日記</span>
+    </div>
+  </div>
+    <div style="flex-grow: 1; min-width: 0; display: flex; overflow: hidden;">
+  <div style="flex-grow: 1; min-width: 0; padding: 40px 48px; display: flex; flex-direction: column; gap: 28px; overflow: hidden;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between;">
+    <h1 class="serif" style="margin: 0; font-size: 32px; font-weight: 700; color: #2B231B;">時間軸</h1>
+    <span class="serif" style="font-size: 15px; color: #7A6C5D; padding-bottom: 8px;">二〇二六年 九月</span>
+  </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 14px; width: 260px; border-radius: 10px; border: 1px solid #E2D7C3; background: #FCF9F3; color: #A89A8A;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4-4"></path></svg><span style="font-size: 14px;">搜尋日記內容</span></div>
+    </div>
+    <div style="width: 720px; display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; gap: 14px;">
+    <div style="display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; gap: 2px; padding-top: 6px;">
+      <span class="serif" style="font-size: 26px; font-weight: 700; line-height: 1; color: #2B231B;">11</span>
+      <span style="font-size: 11px; color: #A89A8A;">週五</span>
+    </div>
+    <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 14px 16px; background: #FCF9F3; border: 1px solid #E2D7C3; border-radius: 16px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 22px; line-height: 1;">😊</span>
+        <p style="font-size: 15px; line-height: 1.7; color: #2B231B; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">早上七點就醒了，窗外的光線很柔。煮了咖啡，坐在陽台看了一會兒書。</p>
+      </div>
+      <div style="width: 100%; height: 160px; border-radius: 10px; overflow: hidden; background: #DCC7AC; flex-shrink: 0;">
+    <svg width="100%" height="100%" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice">
+      <rect width="400" height="240" fill="#E7D5BC"></rect>
+      <circle cx="310" cy="70" r="34" fill="#F1E2C8"></circle>
+      <path d="M0 190 C80 130 140 160 200 150 S330 110 400 160 V240 H0 Z" fill="#B99A77"></path>
+      <path d="M0 215 C90 175 170 205 250 190 S360 170 400 200 V240 H0 Z" fill="#8E7256"></path>
+    </svg>
+  </div>
+    </div>
+  </div>
+<div style="display: flex; gap: 14px;">
+    <div style="display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; gap: 2px; padding-top: 6px;">
+      <span class="serif" style="font-size: 26px; font-weight: 700; line-height: 1; color: #2B231B;">10</span>
+      <span style="font-size: 11px; color: #A89A8A;">週四</span>
+    </div>
+    <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 14px 16px; background: #FCF9F3; border: 1px solid #E2D7C3; border-radius: 16px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 22px; line-height: 1;">😌</span>
+        <p style="font-size: 15px; line-height: 1.7; color: #2B231B; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">加班到八點，但把拖了兩週的報告交出去了，回家路上很輕鬆。</p>
+      </div>
+      
+    </div>
+  </div>
+<div style="display: flex; gap: 14px;">
+    <div style="display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; gap: 2px; padding-top: 6px;">
+      <span class="serif" style="font-size: 26px; font-weight: 700; line-height: 1; color: #2B231B;">9</span>
+      <span style="font-size: 11px; color: #A89A8A;">週三</span>
+    </div>
+    <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 14px 16px; background: #FCF9F3; border: 1px solid #E2D7C3; border-radius: 16px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 22px; line-height: 1;">😔</span>
+        <p style="font-size: 15px; line-height: 1.7; color: #2B231B; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">和阿哲的對話有點不愉快，晚上想了很久，其實是我沒把話說清楚。</p>
+      </div>
+      
+    </div>
+  </div>
+<div style="display: flex; gap: 14px;">
+    <div style="display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; gap: 2px; padding-top: 6px;">
+      <span class="serif" style="font-size: 26px; font-weight: 700; line-height: 1; color: #2B231B;">8</span>
+      <span style="font-size: 11px; color: #A89A8A;">週二</span>
+    </div>
+    <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 14px 16px; background: #FCF9F3; border: 1px solid #E2D7C3; border-radius: 16px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 22px; line-height: 1;">😊</span>
+        <p style="font-size: 15px; line-height: 1.7; color: #2B231B; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">媽媽寄來的柚子到了，剝了一顆分給同事，整個辦公室都是香味。</p>
+      </div>
+      <div style="width: 100%; height: 160px; border-radius: 10px; overflow: hidden; background: #DCC7AC; flex-shrink: 0;">
+    <svg width="100%" height="100%" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice">
+      <rect width="400" height="240" fill="#E7D5BC"></rect>
+      <circle cx="310" cy="70" r="34" fill="#F1E2C8"></circle>
+      <path d="M0 190 C80 130 140 160 200 150 S330 110 400 160 V240 H0 Z" fill="#B99A77"></path>
+      <path d="M0 215 C90 175 170 205 250 190 S360 170 400 200 V240 H0 Z" fill="#8E7256"></path>
+    </svg>
+  </div>
+    </div>
+  </div>
+<div style="display: flex; gap: 14px;">
+    <div style="display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; gap: 2px; padding-top: 6px;">
+      <span class="serif" style="font-size: 26px; font-weight: 700; line-height: 1; color: #2B231B;">7</span>
+      <span style="font-size: 11px; color: #A89A8A;">週一</span>
+    </div>
+    <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 14px 16px; background: #FCF9F3; border: 1px solid #E2D7C3; border-radius: 16px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 22px; line-height: 1;">😐</span>
+        <p style="font-size: 15px; line-height: 1.7; color: #2B231B; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">普通的一天。</p>
+      </div>
+      
+    </div>
+  </div>
+    </div>
+  </div></div>
+  </div>
+</x-dc>
+</body>
+</html>

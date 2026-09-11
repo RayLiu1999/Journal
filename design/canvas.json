@@ -1,0 +1,120 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "手機 · 月曆首頁",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "file": "MobileEntry.dc.html",
+      "title": "手機 · 編輯頁",
+      "x": 480,
+      "y": 0,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "file": "MobileEmpty.dc.html",
+      "title": "手機 · 空狀態",
+      "x": 960,
+      "y": 0,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "file": "MobileTimeline.dc.html",
+      "title": "手機 · 時間軸",
+      "x": 1440,
+      "y": 0,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "file": "MobileStats.dc.html",
+      "title": "手機 · 統計",
+      "x": 1920,
+      "y": 0,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "file": "MobileSettings.dc.html",
+      "title": "手機 · 設定",
+      "x": 2400,
+      "y": 0,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "file": "MobileEntryDark.dc.html",
+      "title": "手機 · 編輯頁（深色）",
+      "x": 2880,
+      "y": 0,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "file": "DesktopCalendar.dc.html",
+      "title": "桌機 · 月曆首頁",
+      "x": 0,
+      "y": 1004,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "DesktopEntry.dc.html",
+      "title": "桌機 · 編輯頁",
+      "x": 1540,
+      "y": 1004,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "DesktopEmpty.dc.html",
+      "title": "桌機 · 空狀態",
+      "x": 0,
+      "y": 2044,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "DesktopTimeline.dc.html",
+      "title": "桌機 · 時間軸",
+      "x": 1540,
+      "y": 2044,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "DesktopStats.dc.html",
+      "title": "桌機 · 統計",
+      "x": 0,
+      "y": 3084,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "DesktopSettings.dc.html",
+      "title": "桌機 · 設定",
+      "x": 1540,
+      "y": 3084,
+      "w": 1440,
+      "h": 900
+    }
+  ],
+  "annotations": [
+    {
+      "id": "brief",
+      "x": 0,
+      "y": -170,
+      "w": 520,
+      "text": "日記 App 設計稿 v1\n單人使用 · 一天一篇 · 心情 emoji + Tiptap 內文 · 圖片存 S3 · PWA 僅安裝\n溫暖紙質感：米白紙底、Noto Serif TC 標題、Noto Sans TC 內文、赤陶色強調\n上排：手機 390×844（含一張深咖啡深色範例）　下排：桌機 1440×900"
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
