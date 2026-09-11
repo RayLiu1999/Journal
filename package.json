@@ -1,0 +1,42 @@
+{
+  "name": "paper-journal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "vitest run tests/e2e",
+    "typecheck": "nuxt typecheck",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "icons": "node scripts/make-icons.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1130.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@tiptap/extension-image": "^3.31.3",
+    "@tiptap/extensions": "^3.31.3",
+    "@tiptap/starter-kit": "^3.31.3",
+    "@tiptap/vue-3": "^3.31.3",
+    "@vite-pwa/nuxt": "^1.1.1",
+    "drizzle-orm": "^0.45.2",
+    "emoji-picker-element": "^1.29.1",
+    "nuxt": "^4.5.2",
+    "postgres": "^3.4.9",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@nuxt/test-utils": "^4.3.2",
+    "@vue/test-utils": "^2.5.0",
+    "drizzle-kit": "^0.31.10",
+    "happy-dom": "^20.14.3",
+    "sharp": "^0.35.4",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.0",
+    "vue-tsc": "^3.3.11"
+  }
+}
