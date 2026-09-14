@@ -71,7 +71,7 @@ async function done() {
       <div class="h-px bg-line" />
       <span class="text-xs tracking-[0.08em] text-ink3">最近</span>
       <p v-if="!recent.length" class="text-sm text-ink2">這個月還沒有其他日記。</p>
-      <NuxtLink v-for="entry in recent" :key="entry.date" :to="`/entry/${entry.date}`" class="flex items-center gap-2.5 rounded-[10px] border border-line bg-card px-3 py-2.5 transition-colors hover:border-accent">
+      <NuxtLink v-for="entry in recent" :key="entry.date" :to="`/entry/${entry.date}`" class="motion-card flex items-center gap-2.5 rounded-[10px] border border-line bg-card px-3 py-2.5 hover:border-accent">
         <span class="text-lg leading-none">{{ entry.mood ?? '·' }}</span>
         <span class="w-8 text-xs text-ink2">{{ Number(entry.date.slice(-2)) }} 日</span>
         <span class="truncate text-[13px]">{{ entry.excerpt || '（沒有文字）' }}</span>
@@ -80,11 +80,11 @@ async function done() {
 
     <div class="flex min-w-0 grow flex-col">
       <header class="flex items-center justify-between px-4 pt-[54px] pb-2 lg:hidden">
-        <NuxtLink to="/" class="flex size-11 items-center" aria-label="返回月曆">
+        <NuxtLink to="/" class="motion-press flex size-11 items-center" aria-label="返回月曆">
           <AppIcon name="back" :size="24" />
         </NuxtLink>
         <span class="font-serif text-[17px] font-bold">{{ formatTitle(date) }} · {{ formatWeekday(date) }}</span>
-        <button v-if="exists" type="button" class="flex size-11 items-center justify-end" aria-label="更多" @click="menuOpen = !menuOpen">
+        <button v-if="exists" type="button" class="motion-press flex size-11 items-center justify-end" aria-label="更多" @click="menuOpen = !menuOpen">
           <AppIcon name="more" :size="24" />
         </button>
         <span v-else class="size-11" />
@@ -99,14 +99,14 @@ async function done() {
           <div class="flex w-fit items-center gap-0.5 rounded-[14px] border border-line bg-card px-1.5 py-1">
             <template v-for="(tool, index) in editorRef?.tools ?? []" :key="index">
               <div v-if="!tool" class="mx-1 h-[22px] w-px bg-line" />
-              <button v-else type="button" class="flex size-10 items-center justify-center rounded-[10px] text-ink2" :class="tool.active ? 'bg-accent-soft text-accent' : 'hover:bg-chip'" :aria-label="tool.label" @click="tool.run">
+              <button v-else type="button" class="motion-press flex size-10 items-center justify-center rounded-[10px] text-ink2" :class="tool.active ? 'bg-accent-soft text-accent' : 'hover:bg-chip'" :aria-label="tool.label" @click="tool.run">
                 <AppIcon :name="tool.icon" :size="20" />
               </button>
             </template>
           </div>
           <div class="flex items-center gap-3.5">
             <span class="text-[13px] text-ink3">{{ statusText }}</span>
-            <button type="button" class="flex size-11 items-center justify-center text-ink2" aria-label="更多" @click="menuOpen = !menuOpen">
+            <button type="button" class="motion-press flex size-11 items-center justify-center text-ink2" aria-label="更多" @click="menuOpen = !menuOpen">
               <AppIcon name="more" />
             </button>
           </div>
@@ -127,31 +127,35 @@ async function done() {
             <JournalEditor ref="editorRef" v-model="content" :date="date" @uploading="uploading = $event" @error="uploadError = $event" />
             <div class="h-40 lg:h-10" />
           </div>
-          <div v-if="menuOpen" class="absolute right-5 top-0 z-40 rounded-xl border border-line bg-card p-1 shadow-lg lg:right-12 lg:top-2" @click="menuOpen = false">
-            <button type="button" class="flex h-11 items-center gap-2 rounded-lg px-3 text-sm text-accent hover:bg-accent-soft" @click="confirmOpen = true">
-              <AppIcon name="trash" :size="18" />刪除這一天
-            </button>
-          </div>
+          <Transition name="popover">
+            <div v-if="menuOpen" class="absolute right-5 top-0 z-40 rounded-xl border border-line bg-card p-1 shadow-lg lg:right-12 lg:top-2" @click="menuOpen = false">
+              <button type="button" class="motion-press flex h-11 items-center gap-2 rounded-lg px-3 text-sm text-accent hover:bg-accent-soft" @click="confirmOpen = true">
+                <AppIcon name="trash" :size="18" />刪除這一天
+              </button>
+            </div>
+          </Transition>
         </div>
 
         <div class="fixed inset-x-0 bottom-0 z-30 flex flex-col gap-2.5 bg-paper px-4 pt-2.5 pb-[max(1.5rem,env(safe-area-inset-bottom))] lg:hidden">
           <div class="flex items-center gap-0.5 rounded-[14px] border border-line bg-card px-1.5 py-1">
             <template v-for="(tool, index) in editorRef?.tools ?? []" :key="index">
               <div v-if="!tool" class="mx-1 h-[22px] w-px bg-line" />
-              <button v-else type="button" class="flex size-10 items-center justify-center rounded-[10px] text-ink2" :class="tool.active ? 'bg-accent-soft text-accent' : 'hover:bg-chip'" :aria-label="tool.label" @click="tool.run">
+              <button v-else type="button" class="motion-press flex size-10 items-center justify-center rounded-[10px] text-ink2" :class="tool.active ? 'bg-accent-soft text-accent' : 'hover:bg-chip'" :aria-label="tool.label" @click="tool.run">
                 <AppIcon :name="tool.icon" :size="20" />
               </button>
             </template>
           </div>
           <div class="flex items-center justify-between">
             <span class="max-w-[65%] truncate text-xs text-ink3">{{ statusText }}</span>
-            <button type="button" class="flex h-11 items-center rounded-full bg-accent px-5 text-[15px] font-bold text-[#FFF7EE]" @click="done">完成</button>
+            <button type="button" class="motion-press flex h-11 items-center rounded-full bg-accent px-5 text-[15px] font-bold text-[#FFF7EE]" @click="done">完成</button>
           </div>
         </div>
 
-        <div v-if="editorRef?.showEmoji" class="fixed inset-x-4 bottom-36 z-40 lg:absolute lg:left-12 lg:top-20 lg:w-[360px]">
-          <emoji-picker @emoji-click="editorRef?.insertEmoji($event)" />
-        </div>
+        <Transition name="sheet">
+          <div v-if="editorRef?.showEmoji" class="fixed inset-x-4 bottom-36 z-40 lg:absolute lg:left-12 lg:top-20 lg:w-[360px]">
+            <emoji-picker @emoji-click="editorRef?.insertEmoji($event)" />
+          </div>
+        </Transition>
       </template>
     </div>
 

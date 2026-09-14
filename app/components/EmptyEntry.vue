@@ -19,7 +19,7 @@ const emit = defineEmits<{ start: [] }>()
       <p class="text-sm leading-[1.7] text-ink2 lg:text-[15px]">先選一個心情，或直接寫下一句話就好。</p>
     </div>
     <MoodPicker v-model="mood" :size="40" />
-    <button type="button" class="flex h-12 items-center gap-2 rounded-full bg-accent px-7 text-[15px] font-bold text-[#FFF7EE]" @click="emit('start')">
+    <button type="button" class="motion-press flex h-12 items-center gap-2 rounded-full bg-accent px-7 text-[15px] font-bold text-[#FFF7EE]" @click="emit('start')">
       <AppIcon name="pen" :size="18" />開始寫這一天
     </button>
   </div>

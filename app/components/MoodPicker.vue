@@ -18,9 +18,9 @@ function toggle(mood: string) {
       role="radio"
       :aria-label="`心情 ${mood}`"
       :aria-checked="model === mood"
-      class="flex items-center justify-center rounded-full border-2 transition-colors"
+      class="motion-press flex items-center justify-center rounded-full border-2"
       :style="{ width: `${size}px`, height: `${size}px`, fontSize: `${Math.round(size * 0.52)}px` }"
-      :class="model === mood ? 'border-accent bg-accent-soft' : 'border-transparent bg-chip hover:border-line'"
+      :class="model === mood ? 'scale-105 border-accent bg-accent-soft shadow-sm' : 'border-transparent bg-chip hover:scale-[1.03] hover:border-line'"
       @click="toggle(mood)"
     >
       {{ mood }}

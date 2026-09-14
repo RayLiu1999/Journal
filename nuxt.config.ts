@@ -14,6 +14,10 @@ export default defineNuxtConfig({
     },
   },
   app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in',
+    },
     head: {
       htmlAttrs: { lang: 'zh-Hant-TW' },
       title: '紙頁日記',

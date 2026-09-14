@@ -2,7 +2,7 @@
 import { formatMonthTitle } from '#shared/date'
 import type { EntrySummary } from '#shared/types'
 
-const { month, prev, next } = useMonth()
+const { month, direction, prev, next } = useMonth()
 const { data: list, error } = await useFetch<EntrySummary[]>('/api/entries', {
   query: { month },
   default: () => [],
@@ -16,11 +16,13 @@ const { data: list, error } = await useFetch<EntrySummary[]>('/api/entries', {
     <div class="flex items-end justify-between">
       <h1 class="font-serif text-[28px] font-bold lg:text-[32px]">時間軸</h1>
       <div class="flex items-center gap-1 pb-1.5">
-        <button type="button" class="flex size-11 items-center justify-center text-ink2" aria-label="上個月" @click="prev">
+        <button type="button" class="motion-press flex size-11 items-center justify-center text-ink2" aria-label="上個月" @click="prev">
           <AppIcon name="prev" :size="20" />
         </button>
-        <span class="font-serif text-sm text-ink2 lg:text-[15px]">{{ formatMonthTitle(month) }}</span>
-        <button type="button" class="flex size-11 items-center justify-center text-ink2" aria-label="下個月" @click="next">
+        <Transition :name="`month-${direction}`" mode="out-in">
+          <span :key="month" class="font-serif text-sm text-ink2 lg:text-[15px]">{{ formatMonthTitle(month) }}</span>
+        </Transition>
+        <button type="button" class="motion-press flex size-11 items-center justify-center text-ink2" aria-label="下個月" @click="next">
           <AppIcon name="next" :size="20" />
         </button>
       </div>

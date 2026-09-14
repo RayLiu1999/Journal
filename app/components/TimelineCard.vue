@@ -13,7 +13,7 @@ const day = computed(() => Number(props.entry.date.slice(-2)))
       <span class="font-serif font-bold leading-none" :class="size === 'l' ? 'text-[26px]' : 'text-[22px]'">{{ day }}</span>
       <span class="text-[11px] text-ink3">{{ WEEK[weekdayOf(entry.date)] }}</span>
     </div>
-    <div class="flex min-w-0 grow flex-col gap-3 rounded-2xl border border-line bg-card px-4 py-3.5 transition-colors group-hover:border-accent">
+    <div class="motion-card flex min-w-0 grow flex-col gap-3 rounded-2xl border border-line bg-card px-4 py-3.5 group-hover:border-accent">
       <div class="flex items-start gap-2.5">
         <span class="text-[22px] leading-none">{{ entry.mood ?? '·' }}</span>
         <p class="line-clamp-2 leading-[1.7]" :class="size === 'l' ? 'text-[15px]' : 'text-sm'">{{ entry.excerpt || '（沒有文字）' }}</p>

@@ -37,7 +37,7 @@ async function clearCache() {
           <AppIcon name="moon" :size="20" class="text-ink2" />
           <span class="grow text-[15px]">外觀</span>
           <div class="flex gap-1 rounded-[10px] bg-chip p-[3px]" role="group" aria-label="選擇外觀">
-            <button v-for="item in themes" :key="item.key" type="button" class="rounded-lg px-2.5 py-1.5 text-xs" :class="theme === item.key ? 'bg-card font-bold text-ink' : 'text-ink2'" :aria-pressed="theme === item.key" @click="setTheme(item.key)">
+            <button v-for="item in themes" :key="item.key" type="button" class="motion-press rounded-lg px-2.5 py-1.5 text-xs" :class="theme === item.key ? 'bg-card font-bold text-ink' : 'text-ink2'" :aria-pressed="theme === item.key" @click="setTheme(item.key)">
               {{ item.label }}
             </button>
           </div>
@@ -64,14 +64,14 @@ async function clearCache() {
       <section class="flex flex-col gap-2">
         <span class="px-1 text-xs tracking-[0.08em] text-ink3">資料</span>
         <div class="flex flex-col rounded-2xl border border-line bg-card">
-          <a href="/api/export" download="journal-export.json" class="flex min-h-[52px] items-center gap-3.5 px-4 hover:bg-chip">
+          <a href="/api/export" download="journal-export.json" class="motion-press flex min-h-[52px] items-center gap-3.5 px-4 hover:bg-chip">
             <AppIcon name="download" :size="20" class="text-ink2" />
             <span class="grow text-[15px]">匯出所有日記</span>
             <span class="text-[13px] text-ink3">JSON</span>
             <AppIcon name="chevron" :size="18" class="text-ink3" />
           </a>
           <div class="mx-4 h-px bg-line" />
-          <button type="button" class="flex min-h-[52px] items-center gap-3.5 px-4 text-accent hover:bg-accent-soft" @click="clearCache">
+          <button type="button" class="motion-press flex min-h-[52px] items-center gap-3.5 px-4 text-accent hover:bg-accent-soft" @click="clearCache">
             <AppIcon name="trash" :size="20" />
             <span class="grow text-left text-[15px]">{{ cleared ? '已清除本機快取' : '清除本機快取' }}</span>
           </button>

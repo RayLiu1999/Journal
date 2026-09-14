@@ -28,7 +28,7 @@ const hideMobileNav = computed(() => route.path.startsWith('/entry'))
           v-for="item in items"
           :key="item.to"
           :to="item.to"
-          class="flex h-11 items-center gap-3 rounded-[10px] px-3 text-sm transition-colors"
+          class="motion-press flex h-11 items-center gap-3 rounded-[10px] px-3 text-sm"
           :class="isActive(item.to) ? 'bg-accent-soft font-bold text-accent' : 'text-ink2 hover:bg-chip'"
         >
           <AppIcon :name="item.icon" :size="20" />
@@ -38,7 +38,7 @@ const hideMobileNav = computed(() => route.path.startsWith('/entry'))
       <div class="grow" />
       <NuxtLink
         :to="`/entry/${todayKey()}`"
-        class="flex h-11 items-center gap-3 rounded-[10px] bg-accent px-3 text-sm font-bold text-[#FFF7EE] transition-opacity hover:opacity-90"
+        class="motion-press flex h-11 items-center gap-3 rounded-[10px] bg-accent px-3 text-sm font-bold text-[#FFF7EE] hover:opacity-90"
       >
         <AppIcon name="pen" :size="18" />
         <span>寫今天的日記</span>
@@ -58,7 +58,7 @@ const hideMobileNav = computed(() => route.path.startsWith('/entry'))
           v-for="item in items"
           :key="item.to"
           :to="item.to"
-          class="flex min-h-11 min-w-16 flex-col items-center justify-center gap-0.5"
+          class="motion-press flex min-h-11 min-w-16 flex-col items-center justify-center gap-0.5"
           :class="isActive(item.to) ? 'text-accent' : 'text-ink3'"
         >
           <AppIcon :name="item.icon" :size="22" />
