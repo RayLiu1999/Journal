@@ -1,11 +1,22 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
-import { $fetch, fetch, setup } from '@nuxt/test-utils/e2e'
+import { $fetch, setup } from '@nuxt/test-utils/e2e'
+import postgres from 'postgres'
 
 const databaseUrl = process.env.DATABASE_URL_TEST
 
 describe.skipIf(!databaseUrl)('stats API', async () => {
-  await setup({ env: { NUXT_DATABASE_URL: databaseUrl! } })
   const dates = ['2031-03-01', '2031-03-02', '2031-03-05']
+
+  afterAll(async () => {
+    const sql = postgres(databaseUrl!, { max: 1 })
+    try {
+      for (const date of dates) await sql`delete from entries where date = ${date}`
+    } finally {
+      await sql.end({ timeout: 5 })
+    }
+  })
+
+  await setup({ env: { NUXT_DATABASE_URL: databaseUrl! } })
 
   beforeAll(async () => {
     for (const [index, date] of dates.entries()) {
@@ -14,10 +25,6 @@ describe.skipIf(!databaseUrl)('stats API', async () => {
         body: { mood: index === 2 ? '😌' : '😊' },
       })
     }
-  })
-
-  afterAll(async () => {
-    for (const date of dates) await fetch(`/api/entries/${date}`, { method: 'DELETE' })
   })
 
   it('counts days and moods for the month', async () => {
