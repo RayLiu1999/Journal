@@ -42,6 +42,11 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     databaseUrl: '',
+    auth: {
+      email: '',
+      password: '',
+      secret: '',
+    },
     s3: {
       endpoint: '',
       region: 'auto',

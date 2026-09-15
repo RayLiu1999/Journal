@@ -3,7 +3,7 @@ export type IconName =
   | 'calendar' | 'timeline' | 'stats' | 'settings' | 'back' | 'more'
   | 'prev' | 'next' | 'image' | 'smile' | 'bold' | 'italic' | 'heading'
   | 'list' | 'quote' | 'pen' | 'chevron' | 'moon' | 'cloud' | 'download'
-  | 'trash' | 'search'
+  | 'trash' | 'search' | 'logout'
 
 const props = withDefaults(defineProps<{ name: IconName; size?: number }>(), { size: 22 })
 
@@ -30,6 +30,7 @@ const paths: Record<IconName, string> = {
   download: '<path d="M12 4v11M7 10l5 5 5-5M4 20h16"/>',
   trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',
   search: '<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4-4"/>',
+  logout: '<path d="M14 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-3M10 12h11M18 8l3 4-3 4"/>',
 }
 </script>
 

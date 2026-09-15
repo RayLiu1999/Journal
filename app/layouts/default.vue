@@ -3,6 +3,7 @@ import { todayKey } from '#shared/date'
 import type { IconName } from '../components/AppIcon.vue'
 
 const route = useRoute()
+const { logout } = useAuth()
 const items: { to: string; icon: IconName; label: string }[] = [
   { to: '/', icon: 'calendar', label: '月曆' },
   { to: '/timeline', icon: 'timeline', label: '時間軸' },
@@ -36,6 +37,14 @@ const hideMobileNav = computed(() => route.path.startsWith('/entry'))
         </NuxtLink>
       </nav>
       <div class="grow" />
+      <button
+        type="button"
+        class="motion-press flex h-11 items-center gap-3 rounded-[10px] px-3 text-sm text-ink2 hover:bg-chip"
+        @click="logout"
+      >
+        <AppIcon name="logout" :size="19" />
+        <span>登出</span>
+      </button>
       <NuxtLink
         :to="`/entry/${todayKey()}`"
         class="motion-press flex h-11 items-center gap-3 rounded-[10px] bg-accent px-3 text-sm font-bold text-[#FFF7EE] hover:opacity-90"

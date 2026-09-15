@@ -2,6 +2,7 @@
 import type { Stats } from '#shared/types'
 
 const { theme, setTheme } = useTheme()
+const { logout } = useAuth()
 const emptyStats: Stats = { daysWritten: 0, streak: 0, moods: [], uploads: 0 }
 const { data: stats, error } = await useFetch<Stats>('/api/stats', {
   default: () => emptyStats,
@@ -74,6 +75,16 @@ async function clearCache() {
           <button type="button" class="motion-press flex min-h-[52px] items-center gap-3.5 px-4 text-accent hover:bg-accent-soft" @click="clearCache">
             <AppIcon name="trash" :size="20" />
             <span class="grow text-left text-[15px]">{{ cleared ? '已清除本機快取' : '清除本機快取' }}</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-2">
+        <span class="px-1 text-xs tracking-[0.08em] text-ink3">帳號</span>
+        <div class="flex flex-col rounded-2xl border border-line bg-card">
+          <button type="button" class="motion-press flex min-h-[52px] items-center gap-3.5 px-4 text-accent hover:bg-accent-soft" @click="logout">
+            <AppIcon name="logout" :size="20" />
+            <span class="grow text-left text-[15px]">登出此裝置</span>
           </button>
         </div>
       </section>
